@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  testasync.netcorewebsite:
+    image: ${DOCKER_REGISTRY-}easyman/testasyncnetcorewebsite
+    build:
+      context: .
+      dockerfile: Test Async .Net Core Website/Dockerfile
+  postgres:
+    image: postgres:12.2
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
